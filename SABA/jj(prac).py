@@ -1,46 +1,36 @@
-def info(name,age):
-    if(age>18):
-        return "elligible"
-    else:
-        return "not elligible"
-name=input("enter name:")
-age=int(input("enter age:"))
-print(info(name,age))
+def square(n):
+    return n%2==0
+num=[2,3,4,5]
+sq=filter(square,num)
+print(list(sq))
 
 
-def grp(a):
-    if(a==1):
-        u=int(input("enter ur chemistry mark:"))
-        m=int(input("enter ur math mark:"))
-        p=int(input("enter ur physics mark:"))
-        c=int(input("enter ur computer mark:"))
-        if(u>30 and m>30 and p>30 and c>30):
-            r=(u+m+p+c)/4
-            print("average=",r)
-    elif(a==2):
-        t=int(input("enter ur chemistry mark:"))
-        q=int(input("enter ur biology mark:"))
-        x=int(input("enter ur physics mark:"))
-        y=int(input("enter ur maths mark:"))
-        if(t>30 and q>30 and x>30 and y>30):
-            w=(t+q+x+y)/4
-            print("average",w)
+def rev(a):
+    c=0
+    while(a>0):
+        b=a%10
+        c=c*10+b
+        a=a//10
+    return c
+#print(rev(a=int(input("enter number;"))))
 
-a='''available grp
-     1.computer science
-     2.biology'''
-print(a)
-a=int(input('select the grp'))
-print(grp(a))
+a=[12345,23456,'abas']
+reverse=filter(lambda a:type(a)==int,a)
+b=map(rev,reverse)
+print(list(b))
 
-def choice(w):
-     if(90<w<100):
-            choice='''elligilbe for all course
-                  1.MBBS
-                  2.BDS
-                  3.BPT
-                  4.PSYCHOLOGY'''
-            print(choice)
-    
+a=['hello','welcome','good','bad']
+def mid(x):
+    return x[len(x)//2]
+#print(mid())
+def middle(y):
+    return y[len(y)//2]+y[len(y)//2-1]
 
+odd=list(filter(lambda x:(len(x)%2)!=0,a))
+b=list(map(mid,odd))
+print(b)
+
+even=list(filter(lambda y:(len(y)%2)==0,a))
+c=list(map(middle,even))
+print(c)
 
