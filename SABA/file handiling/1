@@ -1,0 +1,12 @@
+#Flie handiling
+#syntax file=open('filename','mode')
+#there are certain modes in file handiling
+#'r'-read (open file for reading)
+#'a'-append open for appending(create file and does not affect already exsist file)
+#'w'-write open for writting(affect already exsist file)
+#'t'-text (read the file in text mode)
+#'b'-binary (read the file in binary mode)
+#'+'-open file for updating
+#'rb'-open file for reading only in binary 
+#'r+'-open file for both reading and wriiting
+#'rb+'-open a file for both reading and wriiting in binary format
