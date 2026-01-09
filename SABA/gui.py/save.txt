@@ -1,0 +1,4 @@
+Name:Sabapathy
+Age:23
+marks:325
+Chemistry marks:90
