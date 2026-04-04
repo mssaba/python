@@ -83,7 +83,7 @@ l=LabelEncoder()
 # pred=r.predict(df)
 # print(pred)
 
-from sklearn.linear_model import LinearRegression
+""" from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 
 h=pd.read_csv("honey.csv")
@@ -96,4 +96,44 @@ l=LinearRegression()
 l.fit(x_train,y_train)
 
 pre=l.predict(x_test)
-print(mean_squared_error(y_test,pre))
+print(mean_squared_error(y_test,pre)) """
+
+#UNSUPERVISED LEARNING 
+#KMEANS
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as pt
+
+# a=pd.read_csv("Dataset\Admission.csv")
+# ad=a.drop(['Serial No.'],axis=1)
+
+s=StandardScaler()
+# s.fit_transform(ad)
+
+# k=KMeans(n_clusters=2,random_state=42)
+# ad['k_cluster']=k.fit_predict(ad)
+# print(ad)
+# pt.scatter(ad['GRE Score'],ad['CGPA'],c=ad['k_cluster'],cmap='Set1',s=100,edgecolor='k')
+# pt.show()
+
+""" bc=pd.read_csv('Dataset\BreastCancer.csv')
+bc.dropna(inplace=True)
+bcc=bc.drop(['Id'],axis=1)
+scalar=StandardScaler()
+scalar.fit_transform(bcc)
+
+kmean=KMeans(n_clusters=2,random_state=42)
+bcc['cluster']=kmean.fit_predict(bcc)
+print(bcc)
+
+pt.scatter(bcc['Cl.thickness'],bcc['Cell.size'],c=bcc['cluster'],cmap='bone',s=150,edgecolor='k')
+pt.show() """
+
+from scipy.cluster.hierarchy import dendrogram,linkage,fcluster
+
+i=pd.read_csv('Dataset\irisdataset.csv')
+id=i.drop(['Class'],axis=1)
+x=s.fit_transform(id)
+l=linkage(x,method='ward')
+dendrogram(l,orientation='top',distance_sort='descenting')
+pt.show()
